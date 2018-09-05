@@ -8,6 +8,8 @@ google.charts.setOnLoadCallback(drawEmploymentLevelOfDegreeChart);
 google.charts.setOnLoadCallback(drawEmploymentStatusByGender);
 google.charts.setOnLoadCallback(drawSalaryChart);
 google.charts.setOnLoadCallback(drawSalaryDistributionChart);
+google.charts.setOnLoadCallback(drawGraduateGotJobsChart);
+google.charts.setOnLoadCallback(drawGraduatesWelfareChart);
 
 //Regions of Statistics chart
 function drawStatDataRegionMap() {
@@ -176,16 +178,15 @@ function drawSalaryChart() {
   above250PieCharts();
 }
 
+//salary distribution
 function drawSalaryDistributionChart() {
   var data = google.visualization.arrayToDataTable([
-    ['Salary', 'Starting Salary', 'Current Salary'],
-    ['Under 20k', 766, 255],
-    ['20k-49k', 1309, 457],
-    ['50k-99k', 904, 496],
-    ['100k - 149k', 247, 220],
-    ['150k-199k', 108, 117],
-    ['200k-249k', 50, 51],
-    ['250k and Above', 48, 90]
+    ['Salary', 'Starting Salary Perentage', 'Current Salary Percentage'],
+    ['Under ₦20,000', 22.32, 13.59],
+    ['₦20,000-₦49,000', 38.14, 27.6],
+    ['₦50,000-₦99,000', 26.34, 29.95],
+    ['₦100,000 -₦199,000', 10.34, 20.35],
+    ['₦200,000 and Above', 2.86, 8.35]
   ]);
 
   var options = {
@@ -197,10 +198,11 @@ function drawSalaryDistributionChart() {
     hAxis: {
       // baselineColor: 'red',
       // baseline: 0
-      // format: none,
-      gridlines: { color: 'transparent', count: 1 }
-    }
-    // isStacked: 'percent'
+      format: null,
+      gridlines: { color: 'transparent', count: 3 },
+      fontSize: 100
+    },
+    legend: { position: 'left', textStyle: { color: 'blue', fontSize: 16 } }
   };
 
   var chart = new google.charts.Bar(
@@ -208,6 +210,72 @@ function drawSalaryDistributionChart() {
   );
 
   chart.draw(data, google.charts.Bar.convertOptions(options));
+}
+
+// HOW GRADUATES GOT THE JOBS
+function drawGraduateGotJobsChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['How Graduates got their jobs', 'Hours per Day'],
+    ['Internship', 220],
+    ['Employers Website', 95],
+    ['Personal Contact', 1448],
+    ['Social media/professional networking sites', 639],
+    ['University / polytechnic', 151],
+    ['Recruitment agency/Online job site', 612],
+    ['Media', 267]
+  ]);
+
+  var options = {
+    title: 'How Graduates got their Jobs',
+    // pieHole: 0.1,
+    pieSliceTextStyle: {
+      color: 'white',
+      bold: true
+    },
+    fontSize: 16,
+    is3D: true,
+    legend: 'true',
+    slices: {
+      1: { offset: 0.3 },
+      4: { offset: 0.3 }
+    }
+  };
+
+  var chart = new google.visualization.PieChart(
+    document.getElementById('graduate-got-jobs')
+  );
+  chart.draw(data, options);
+}
+
+// GRADUATES WELFARE
+function drawGraduatesWelfareChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Count', 'Rate'],
+    ['Yes: From my first job', 271],
+    ['No: From my current job', 466],
+    ['No', 2965]
+  ]);
+
+  var options = {
+    title: "ability to rent an apartment or buy a car from first job's salary",
+    pieHole: 0.9,
+    pieSliceTextStyle: {
+      color: 'black',
+      bold: true
+    },
+    fontSize: 16,
+    // is3D: true,
+    legend: 'true'
+    // slices: {
+    //   1: { offset: 0.3 },
+    //   4: { offset: 0.3 }
+    // }
+  };
+
+  var chart = new google.visualization.PieChart(
+    document.getElementById('rent-car-from-salary')
+  );
+  chart.draw(data, options);
 }
 
 function under20kPieCharts() {
