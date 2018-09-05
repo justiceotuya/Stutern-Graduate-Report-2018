@@ -7,7 +7,7 @@ google.charts.setOnLoadCallback(drawEmploymentStatusChart);
 google.charts.setOnLoadCallback(drawEmploymentLevelOfDegreeChart);
 google.charts.setOnLoadCallback(drawEmploymentStatusByGender);
 google.charts.setOnLoadCallback(drawSalaryChart);
-// google.charts.setOnLoadCallback(drawEmploymentStatusByGender);
+google.charts.setOnLoadCallback(drawSalaryDistributionChart);
 
 //Regions of Statistics chart
 function drawStatDataRegionMap() {
@@ -121,7 +121,7 @@ function drawEmploymentLevelOfDegreeChart() {
   chart.draw(data, options);
 }
 
-//Level of Employment by degree
+//Level of Employment by Gender
 function drawEmploymentStatusByGender() {
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Gender');
@@ -173,6 +173,41 @@ function drawSalaryChart() {
   above100under149PieCharts();
   above149under199PieCharts();
   above200under249PieCharts();
+  above250PieCharts();
+}
+
+function drawSalaryDistributionChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Salary', 'Starting Salary', 'Current Salary'],
+    ['Under 20k', 766, 255],
+    ['20k-49k', 1309, 457],
+    ['50k-99k', 904, 496],
+    ['100k - 149k', 247, 220],
+    ['150k-199k', 108, 117],
+    ['200k-249k', 50, 51],
+    ['250k and Above', 48, 90]
+  ]);
+
+  var options = {
+    chart: {
+      title: 'Company Performance',
+      subtitle: 'Sales, Expenses, and Profit: 2014-2017'
+    },
+    orientation: 'vertical',
+    hAxis: {
+      // baselineColor: 'red',
+      // baseline: 0
+      // format: none,
+      gridlines: { color: 'transparent', count: 1 }
+    }
+    // isStacked: 'percent'
+  };
+
+  var chart = new google.charts.Bar(
+    document.getElementById('salary-distribution')
+  );
+
+  chart.draw(data, google.charts.Bar.convertOptions(options));
 }
 
 function under20kPieCharts() {
@@ -231,14 +266,14 @@ function above20under49PieCharts() {
   //pie Data
   var above20under49StartData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 349],
-    ['Female', 417]
+    ['Male', 671],
+    ['Female', 637]
   ]);
 
   var above20under49CurrentData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 94],
-    ['Female', 131]
+    ['Male', 236],
+    ['Female', 220]
   ]);
 
   //pie options
@@ -289,14 +324,14 @@ function above49under99PieCharts() {
   //pie Data
   var above49under99StartData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 349],
-    ['Female', 417]
+    ['Male', 471],
+    ['Female', 433]
   ]);
 
   var above49under99CurrentData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 94],
-    ['Female', 131]
+    ['Male', 239],
+    ['Female', 257]
   ]);
 
   //pie options
@@ -347,14 +382,14 @@ function above100under149PieCharts() {
   //pie Data
   var above100under149StartData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 349],
-    ['Female', 417]
+    ['Male', 148],
+    ['Female', 99]
   ]);
 
   var above100under149CurrentData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 94],
-    ['Female', 131]
+    ['Male', 134],
+    ['Female', 86]
   ]);
 
   //pie options
@@ -405,14 +440,14 @@ function above149under199PieCharts() {
   //pie Data
   var above149under199StartData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 349],
-    ['Female', 417]
+    ['Male', 67],
+    ['Female', 41]
   ]);
 
   var above149under199CurrentData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 94],
-    ['Female', 131]
+    ['Male', 71],
+    ['Female', 46]
   ]);
 
   //pie options
@@ -436,7 +471,7 @@ function above149under199PieCharts() {
     },
     legend: false,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['purple', 'indigo'],
+    colors: ['blue', 'black'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -463,14 +498,14 @@ function above200under249PieCharts() {
   //pie Data
   var above200under249StartData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 349],
-    ['Female', 417]
+    ['Male', 33],
+    ['Female', 17]
   ]);
 
   var above200under249CurrentData = google.visualization.arrayToDataTable([
     ['Gender', 'Count'],
-    ['Male', 94],
-    ['Female', 131]
+    ['Male', 34],
+    ['Female', 17]
   ]);
 
   //pie options
@@ -482,7 +517,7 @@ function above200under249PieCharts() {
     },
     legend: true,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['blue', 'black'],
+    colors: ['purple', 'indigo'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -515,4 +550,56 @@ function above200under249PieCharts() {
     above200under249CurrentData,
     above200under249CurrentOptions
   );
+}
+
+function above250PieCharts() {
+  //pie Data
+  var above250StartData = google.visualization.arrayToDataTable([
+    ['Gender', 'Count'],
+    ['Male', 33],
+    ['Female', 15]
+  ]);
+
+  var above250CurrentData = google.visualization.arrayToDataTable([
+    ['Gender', 'Count'],
+    ['Male', 64],
+    ['Female', 26]
+  ]);
+
+  //pie options
+  var above250StartOptions = {
+    title: '₦250,000 and more',
+    pieHole: 0.8,
+    pieSliceTextStyle: {
+      color: 'black'
+    },
+    legend: true,
+    // backgroundColor: { strokeWidth: 10 },
+    colors: ['#F45151', '#F39242'],
+    fontSize: 15
+    // forceIFrame: true
+  };
+
+  var above250CurrentOptions = {
+    pieHole: 0.8,
+    pieSliceTextStyle: {
+      color: 'black'
+    },
+    legend: false,
+    // backgroundColor: { strokeWidth: 10 },
+    colors: ['green', 'brown'],
+    fontSize: 15
+    // forceIFrame: true
+  };
+
+  // drawing the pie
+  var above250StartChart = new google.visualization.PieChart(
+    document.getElementById('above250Start')
+  );
+  above250StartChart.draw(above250StartData, above250StartOptions);
+
+  var above250CurrentChart = new google.visualization.PieChart(
+    document.getElementById('above250Current')
+  );
+  above250CurrentChart.draw(above250CurrentData, above250CurrentOptions);
 }
