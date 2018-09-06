@@ -12,6 +12,7 @@ google.charts.setOnLoadCallback(drawGraduateGotJobsChart);
 google.charts.setOnLoadCallback(drawGraduatesWelfareChart);
 google.charts.setOnLoadCallback(drawNairaForeignCurrencyChart);
 google.charts.setOnLoadCallback(drawMediumOfCommuteChart);
+google.charts.setOnLoadCallback(drawEmployingIndustriesChart);
 
 //Regions of Statistics chart
 function drawStatDataRegionMap() {
@@ -349,14 +350,30 @@ function drawMediumOfCommuteChart() {
 }
 
 //Employing Industries
-function drawSalaryDistributionChart() {
+function drawEmployingIndustriesChart() {
   var data = google.visualization.arrayToDataTable([
     ['Industries', 'First Job', 'Later Job'],
-    ['Under ₦20,000', 22.32, 13.59],
-    ['₦20,000-₦49,000', 38.14, 27.6],
-    ['₦50,000-₦99,000', 26.34, 29.95],
-    ['₦100,000 -₦199,000', 10.34, 20.35],
-    ['₦200,000 and Above', 2.86, 8.35]
+    ['Technology', 10.47, 11.12],
+    ['Media', 8.72, 10.57],
+    ['Consulting', 5.51, 5.44],
+    ['Retail / Wholesales', 3.67, 3.32],
+    ['Healthcare', 4.72, 5.32],
+    ['Education', 15.08, 12.33],
+    ['Banking / Financial Services', 11.93, 11.78],
+    ['Engineering', 4.4, 4.89],
+    ['Others', 4.43, 4.89],
+    ['Hospitality / Leisure', 2.77, 2.96],
+    ['Government / Defence', 1.95, 1.69],
+    ['Construction / Real Estate', 4.96, 4.53],
+    ['NGO', 2.71, 2.96],
+    ['Agriculture / Poultry / Fishing', 1.81, 1.75],
+    ['Legal', 2.27, 1.93],
+    ['Oil & Gas / Mining', 2.95, 2.72],
+    ['Telecommunications', 5.28, 4.53],
+    ['Logistics / Transpo rtation', 1.57, 1.63],
+    ['FMCG', 3.59, 3.93],
+    ['Blue Collar', 0.17, 0.66],
+    ['Food Services', 1.02, 1.03]
   ]);
 
   var options = {
