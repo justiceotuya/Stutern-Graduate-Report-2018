@@ -10,6 +10,8 @@ google.charts.setOnLoadCallback(drawSalaryChart);
 google.charts.setOnLoadCallback(drawSalaryDistributionChart);
 google.charts.setOnLoadCallback(drawGraduateGotJobsChart);
 google.charts.setOnLoadCallback(drawGraduatesWelfareChart);
+google.charts.setOnLoadCallback(drawNairaForeignCurrencyChart);
+google.charts.setOnLoadCallback(drawMediumOfCommuteChart);
 
 //Regions of Statistics chart
 function drawStatDataRegionMap() {
@@ -220,7 +222,7 @@ function drawGraduateGotJobsChart() {
     ['Employers Website', 95],
     ['Personal Contact', 1448],
     ['Social media/professional networking sites', 639],
-    ['University / polytechnic', 151],
+    ['University / polytechnic(e.g.Careers Service, lecturer, website)', 151],
     ['Recruitment agency/Online job site', 612],
     ['Media', 267]
   ]);
@@ -276,6 +278,108 @@ function drawGraduatesWelfareChart() {
     document.getElementById('rent-car-from-salary')
   );
   chart.draw(data, options);
+}
+
+// NAIRA AND FOREIGN CURRENCY EARNERS
+function drawNairaForeignCurrencyChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Count', 'Rate'],
+    ['Foreign Currency ', 55],
+    ['Naira', 3377]
+  ]);
+
+  var options = {
+    title: 'NAIRA AND FOREIGN CURRENCY EARNERS',
+    // pieHole: 0.2,
+    pieSliceTextStyle: {
+      color: 'black',
+      bold: true
+    },
+    fontSize: 16,
+    is3D: true,
+    legend: 'true',
+    slices: {
+      1: { offset: 0.1 }
+      //   4: { offset: 0.3 }
+    },
+    pieStartAngle: 100
+  };
+  var chart = new google.visualization.PieChart(
+    document.getElementById('naira-foreign-earners')
+  );
+  chart.draw(data, options);
+}
+
+// MEDIUM OF COMMUTING TO WORK
+function drawMediumOfCommuteChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Transport mode', 'Rate'],
+    ['Commercial Vehicle ', 2045],
+    ['BRT', 243],
+    ['Uber/Taxify/Taxi services', 90],
+    ['Car', 374],
+    ['Keke Marwa / Napep / Tricycle', 273],
+    ['Walking', 175],
+    ['Motorcycle', 216],
+    ['Bicycle', 11],
+    ['Water / Ferry', 2]
+  ]);
+
+  var options = {
+    title: 'Medium of Commuting to work',
+    pieHole: 0.8,
+    pieSliceTextStyle: {
+      color: 'black',
+      bold: true
+    },
+    fontSize: 16,
+    // is3D: true,
+    legend: 'true'
+    // slices: {
+    //   1: { offset: 0.1 }
+    //   //   4: { offset: 0.3 }
+    // },
+    // pieStartAngle: 100
+  };
+
+  var chart = new google.visualization.PieChart(
+    document.getElementById('medium-of-commuting')
+  );
+  chart.draw(data, options);
+}
+
+//Employing Industries
+function drawSalaryDistributionChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Industries', 'First Job', 'Later Job'],
+    ['Under ₦20,000', 22.32, 13.59],
+    ['₦20,000-₦49,000', 38.14, 27.6],
+    ['₦50,000-₦99,000', 26.34, 29.95],
+    ['₦100,000 -₦199,000', 10.34, 20.35],
+    ['₦200,000 and Above', 2.86, 8.35]
+  ]);
+
+  var options = {
+    chart: {
+      title: 'Employing Industries'
+    },
+    orientation: 'vertical',
+    hAxis: {
+      // baselineColor: 'red',
+      // baseline: 0
+      format: null,
+      gridlines: { color: 'transparent', count: 3 },
+      fontSize: 100,
+      isStacked: true
+    },
+    legend: { position: 'left', textStyle: { color: 'blue', fontSize: 16 } }
+  };
+
+  var chart = new google.charts.Bar(
+    document.getElementById('employing-industries')
+  );
+
+  chart.draw(data, google.charts.Bar.convertOptions(options));
 }
 
 function under20kPieCharts() {
