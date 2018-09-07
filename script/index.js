@@ -13,6 +13,8 @@ google.charts.setOnLoadCallback(drawGraduatesWelfareChart);
 google.charts.setOnLoadCallback(drawNairaForeignCurrencyChart);
 google.charts.setOnLoadCallback(drawMediumOfCommuteChart);
 google.charts.setOnLoadCallback(drawEmployingIndustriesChart);
+google.charts.setOnLoadCallback(drawEducationSatisfactionChart);
+google.charts.setOnLoadCallback(drawEmployabilitySkillsChart);
 
 //Regions of Statistics chart
 function drawStatDataRegionMap() {
@@ -30,11 +32,11 @@ function drawStatDataRegionMap() {
     region: 'NG',
     resolution: 'provinces',
     displayMode: 'regions',
-    colorAxis: { colors: ['green', 'blue', 'red', 'black', 'pink'] },
+    colorAxis: { colors: ['#656882'] },
     // colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
     // backgroundColor: 'black',
     // forceIFrame: 'true',
-    datalessRegionColor: 'transparent',
+    datalessRegionColor: '#e8eef9',
     legend: false
   };
 
@@ -65,7 +67,7 @@ function drawEmploymentStatusChart() {
     },
     legend: 'true',
     // backgroundColor: { strokeWidth: 50 },
-    colors: ['green', 'black', 'grey', 'red', 'purple', 'gold']
+    colors: ['#2d6e64', '#53c0b6', '#f7ba44', '#f3963e', '#f06e38', '#123530']
   };
 
   var chart = new google.visualization.PieChart(
@@ -109,6 +111,7 @@ function drawEmploymentLevelOfDegreeChart() {
       title: 'Degree',
       textPosition: 'out'
     },
+    colors: ['#123530', '#2d6e64', '#53c0b6', '#f7ba44', '#f3963e', '#f06e38'],
     vAxis: {
       gridlines: { color: '#fff', count: 4 },
       scaleType: null,
@@ -150,7 +153,7 @@ function drawEmploymentStatusByGender() {
     hAxis: {
       textPosition: 'out'
     },
-    colors: ['orange', 'blue'],
+    colors: ['#54c3b6', '#f3993e'],
 
     vAxis: {
       gridlines: { color: '#fff', count: 4 },
@@ -194,18 +197,27 @@ function drawSalaryDistributionChart() {
 
   var options = {
     chart: {
-      title: 'Company Performance',
-      subtitle: 'Sales, Expenses, and Profit: 2014-2017'
+      title: 'Salary Distribution',
+      fontSize: 20
     },
+    colors: ['#f06e38', '#123530'],
     orientation: 'vertical',
     hAxis: {
       // baselineColor: 'red',
       // baseline: 0
       format: null,
-      gridlines: { color: 'transparent', count: 3 },
-      fontSize: 100
+      gridlines: { color: 'transparent', count: 3 }
+      // fontSize: 100
     },
-    legend: { position: 'left', textStyle: { color: 'blue', fontSize: 16 } }
+    vAxis: {
+      //   baselineColor: 'green',
+      //   // gridlines: { color: 'green', count: 8 }
+      textStyle: {
+        fontSize: 16,
+        color: 'black'
+      }
+    },
+    legend: { position: 'left', textStyle: { color: 'black', fontSize: 16 } }
   };
 
   var chart = new google.charts.Bar(
@@ -235,6 +247,16 @@ function drawGraduateGotJobsChart() {
       color: 'white',
       bold: true
     },
+    colors: [
+      '#66d9d1',
+      '#347d70',
+      '#668782',
+      '#123530',
+      '#54c3b6',
+      '#2d6e61',
+      '#4d736d'
+    ],
+
     fontSize: 16,
     is3D: true,
     legend: 'true',
@@ -266,6 +288,8 @@ function drawGraduatesWelfareChart() {
       color: 'black',
       bold: true
     },
+    colors: ['#007162', '#00c7b8', '#ff9700'],
+
     fontSize: 16,
     // is3D: true,
     legend: 'true'
@@ -296,6 +320,7 @@ function drawNairaForeignCurrencyChart() {
       color: 'black',
       bold: true
     },
+    colors: ['#007162', '#00c7b8'],
     fontSize: 16,
     is3D: true,
     legend: 'true',
@@ -315,15 +340,15 @@ function drawNairaForeignCurrencyChart() {
 function drawMediumOfCommuteChart() {
   var data = google.visualization.arrayToDataTable([
     ['Transport mode', 'Rate'],
-    ['Commercial Vehicle ', 2045],
-    ['BRT', 243],
-    ['Uber/Taxify/Taxi services', 90],
-    ['Car', 374],
-    ['Keke Marwa / Napep / Tricycle', 273],
-    ['Walking', 175],
-    ['Motorcycle', 216],
+    ['Water / Ferry', 2],
     ['Bicycle', 11],
-    ['Water / Ferry', 2]
+    ['Motorcycle', 216],
+    ['Walking', 175],
+    ['Keke', 273],
+    ['Car', 374],
+    ['Uber/Taxify/Taxi services', 90],
+    ['BRT', 243],
+    ['Commercial Vehicle ', 2045]
   ]);
 
   var options = {
@@ -333,6 +358,18 @@ function drawMediumOfCommuteChart() {
       color: 'black',
       bold: true
     },
+    colors: [
+      '#ba491a',
+      '#062f27',
+      '#54c2b4',
+      '#426764',
+      '#46a6a1',
+      '#f7b844',
+      '#ba9154',
+      '#9c4521',
+      '#2d6e61'
+    ],
+
     fontSize: 16,
     // is3D: true,
     legend: 'true'
@@ -380,16 +417,26 @@ function drawEmployingIndustriesChart() {
     chart: {
       title: 'Employing Industries'
     },
+    colors: ['#2d6e61'],
     orientation: 'vertical',
     hAxis: {
-      // baselineColor: 'red',
-      // baseline: 0
-      format: null,
-      gridlines: { color: 'transparent', count: 3 },
-      fontSize: 100,
-      isStacked: true
+      baselineColor: 'black',
+      gridlines: { color: 'transparent' }
     },
-    legend: { position: 'left', textStyle: { color: 'blue', fontSize: 16 } }
+    bar: { width: 200 },
+
+    // chartArea: { width: '150%', height: '15%' },
+    vAxis: {
+      //   baselineColor: 'green',
+      //   // gridlines: { color: 'green', count: 8 }
+      textStyle: {
+        fontSize: 15,
+        color: 'black'
+      }
+    },
+
+    isStacked: true,
+    legend: { textStyle: { color: 'black', fontSize: 15 } }
   };
 
   var chart = new google.charts.Bar(
@@ -397,6 +444,132 @@ function drawEmployingIndustriesChart() {
   );
 
   chart.draw(data, google.charts.Bar.convertOptions(options));
+}
+
+//EDUCATION SATISFACTION;
+function drawEducationSatisfactionChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Degree');
+  data.addColumn('number', 'Employed');
+  data.addColumn('number', 'Further Studies');
+
+  data.addRows([
+    [{ v: 'Strongly Disagree', f: 'Strongly Disagree' }, 410, 160],
+    [{ v: 'Disagree', f: 'Disagree' }, 639, 292],
+    [{ v: 'Agree', f: 'Agree' }, 1573, 1686],
+    [{ v: 'Strongly Agree', f: 'Strongly Agree' }, 807, 1291]
+  ]);
+
+  var options = {
+    title: 'Employment status  by level of degree chart',
+    // isStacked: 'percent',
+    hAxis: {
+      textPosition: 'out'
+    },
+    colors: ['#2d6e61', '#54c3b6'],
+    vAxis: {
+      gridlines: { color: '#fff', count: 4 },
+      scaleType: null
+      // width: 1000
+    },
+    legend: {
+      position: 'right'
+    },
+
+    bar: { groupWidth: '30%' }
+  };
+
+  var chart = new google.visualization.ColumnChart(
+    document.getElementById('education-satisfaction')
+  );
+  chart.draw(data, options);
+
+  // var chart = new google.charts.Bar(
+  // document.getElementById('education-satisfaction')
+  // );
+
+  // chart.draw(data, google.charts.Bar.convertOptions(options));
+}
+
+//Employability Skills;
+function drawEmployabilitySkillsChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Ability');
+  data.addColumn('number', 'Percent');
+  // data.addColumn('number', 'Further Studies');
+
+  data.addRows([
+    [{ v: 'Critical thinking skills', f: 'Critical thinking skills' }, 55.2],
+    [
+      {
+        v: 'Ability to solve complex problems',
+        f: 'Ability to solve complex problems'
+      },
+      48.5
+    ],
+    [
+      { v: 'Ability to work with others', f: 'Ability to work with others' },
+      54.7
+    ],
+    [
+      { v: 'Written communication skills', f: 'Written communication skills' },
+      45.6
+    ],
+    [
+      { v: 'Spoken communication skills', f: 'Spoken communication skills' },
+      43.3
+    ],
+    [
+      {
+        v: 'Knowledge of the sk',
+        f: 'Knowledge of the skill(s) you are studying'
+      },
+      41.9
+    ],
+    [{ v: 'None of the above', f: 'None of the above' }, 7.6]
+  ]);
+
+  var options = {
+    title: 'Employability Skills',
+    // isStacked: 'percent',
+    hAxis: {
+      textPosition: 'out',
+      // slantedText: true,
+      slantedTextAngle: 20
+      // maxTextLines: 1,
+      // maxAlternation: 1
+    },
+    colors: [
+      // '#123530',
+      '#2d6e61',
+      '#54c3b6',
+      '#46a6a1',
+      '#456b69',
+      '#59cdc2',
+      '#347d70'
+    ],
+    vAxis: {
+      gridlines: { color: '#fff', count: 4 },
+      scaleType: null
+      // width: 1000
+    },
+    legend: {
+      position: 'none'
+    },
+
+    bar: { groupWidth: '30%' }
+  };
+
+  var chart = new google.visualization.ColumnChart(
+    document.getElementById('employability-skills')
+  );
+  chart.draw(data, options);
+
+  // var chart = new google.charts.Bar(
+  // document.getElementById('education-satisfaction')
+  // );
+
+  // chart.draw(data, google.charts.Bar.convertOptions(options));
 }
 
 function under20kPieCharts() {
@@ -422,7 +595,7 @@ function under20kPieCharts() {
     },
     legend: true,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['orange', 'blue'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -434,7 +607,7 @@ function under20kPieCharts() {
     },
     legend: false,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['orange', 'blue'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -474,7 +647,7 @@ function above20under49PieCharts() {
     },
     legend: true,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['red', 'black'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -486,7 +659,7 @@ function above20under49PieCharts() {
     },
     legend: false,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['red', 'black'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -532,7 +705,7 @@ function above49under99PieCharts() {
     },
     legend: true,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['pink', 'purple'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -544,7 +717,7 @@ function above49under99PieCharts() {
     },
     legend: false,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['pink', 'purple'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -590,7 +763,7 @@ function above100under149PieCharts() {
     },
     legend: true,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['orange', 'blue'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -602,7 +775,7 @@ function above100under149PieCharts() {
     },
     legend: false,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['orange', 'blue'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -648,7 +821,7 @@ function above149under199PieCharts() {
     },
     legend: true,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['blue', 'black'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -660,7 +833,7 @@ function above149under199PieCharts() {
     },
     legend: false,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['blue', 'black'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -706,7 +879,7 @@ function above200under249PieCharts() {
     },
     legend: true,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['purple', 'indigo'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -718,7 +891,7 @@ function above200under249PieCharts() {
     },
     legend: false,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['purple', 'indigo'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -764,7 +937,7 @@ function above250PieCharts() {
     },
     legend: true,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['#F45151', '#F39242'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };
@@ -776,7 +949,7 @@ function above250PieCharts() {
     },
     legend: false,
     // backgroundColor: { strokeWidth: 10 },
-    colors: ['green', 'brown'],
+    colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     // forceIFrame: true
   };

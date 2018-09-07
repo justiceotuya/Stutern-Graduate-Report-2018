@@ -63,6 +63,10 @@ section {
   width: 100%;
 }
 
+#employing-industries {
+  height: 800px;
+}
+
 @media screen and (min-width: 600px) {
   .row {
     width: 100%;
