@@ -2,7 +2,7 @@ google.charts.load('upcoming', {
   packages: ['corechart', 'bar'],
   mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
 });
-google.charts.setOnLoadCallback(drawStatDataRegionMap);
+
 google.charts.setOnLoadCallback(drawEmploymentStatusChart);
 google.charts.setOnLoadCallback(drawEmploymentLevelOfDegreeChart);
 google.charts.setOnLoadCallback(drawEmploymentStatusByGender);
@@ -15,36 +15,6 @@ google.charts.setOnLoadCallback(drawMediumOfCommuteChart);
 google.charts.setOnLoadCallback(drawEmployingIndustriesChart);
 google.charts.setOnLoadCallback(drawEducationSatisfactionChart);
 google.charts.setOnLoadCallback(drawEmployabilitySkillsChart);
-
-//Regions of Statistics chart
-function drawStatDataRegionMap() {
-  var data = google.visualization.arrayToDataTable([
-    ['State', 'Number of Respondents'],
-    ['Edo', 200],
-    ['Enugu', 300],
-    ['Oyo', 400],
-    ['Imo', 500],
-    ['Kaduna', 600]
-  ]);
-
-  var options = {
-    title: 'Employment Status',
-    region: 'NG',
-    resolution: 'provinces',
-    displayMode: 'regions',
-    colorAxis: { colors: ['#656882'] },
-    // colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
-    // backgroundColor: 'black',
-    // forceIFrame: 'true',
-    datalessRegionColor: '#e8eef9',
-    legend: false
-  };
-
-  var chart = new google.visualization.GeoChart(
-    document.getElementById('hero-map')
-  );
-  chart.draw(data, options);
-}
 
 //Employment Status chart
 function drawEmploymentStatusChart() {
@@ -65,7 +35,7 @@ function drawEmploymentStatusChart() {
       color: 'black',
       size: '2px'
     },
-    legend: 'true',
+    legend: { position: 'top', alignment: 'end', maxLines: 10 },
     // backgroundColor: { strokeWidth: 50 },
     colors: ['#2d6e64', '#53c0b6', '#f7ba44', '#f3963e', '#f06e38', '#123530']
   };
@@ -187,7 +157,7 @@ function drawSalaryChart() {
 //salary distribution
 function drawSalaryDistributionChart() {
   var data = google.visualization.arrayToDataTable([
-    ['Salary', 'Starting Salary Perentage', 'Current Salary Percentage'],
+    ['Salary', 'Starting Salary Percentage', 'Current Salary Percentage'],
     ['Under ₦20,000', 22.32, 13.59],
     ['₦20,000-₦49,000', 38.14, 27.6],
     ['₦50,000-₦99,000', 26.34, 29.95],
@@ -217,7 +187,12 @@ function drawSalaryDistributionChart() {
         color: 'black'
       }
     },
-    legend: { position: 'left', textStyle: { color: 'black', fontSize: 16 } }
+    legend: {
+      position: 'top',
+      alignment: 'end',
+      maxLines: 10,
+      textStyle: { color: 'black', fontSize: 16 }
+    }
   };
 
   var chart = new google.charts.Bar(
@@ -259,7 +234,7 @@ function drawGraduateGotJobsChart() {
 
     fontSize: 16,
     is3D: true,
-    legend: 'true',
+    legend: { position: 'top', alignment: 'end', maxLines: 10 },
     slices: {
       1: { offset: 0.3 },
       4: { offset: 0.3 }
@@ -292,7 +267,7 @@ function drawGraduatesWelfareChart() {
 
     fontSize: 16,
     // is3D: true,
-    legend: 'true'
+    legend: { position: 'top', alignment: 'end', maxLines: 10 }
     // slices: {
     //   1: { offset: 0.3 },
     //   4: { offset: 0.3 }
@@ -323,7 +298,7 @@ function drawNairaForeignCurrencyChart() {
     colors: ['#007162', '#00c7b8'],
     fontSize: 16,
     is3D: true,
-    legend: 'true',
+    legend: { position: 'top', alignment: 'end', maxLines: 10 },
     slices: {
       1: { offset: 0.1 }
       //   4: { offset: 0.3 }
@@ -372,7 +347,7 @@ function drawMediumOfCommuteChart() {
 
     fontSize: 16,
     // is3D: true,
-    legend: 'true'
+    legend: { position: 'top', alignment: 'end', maxLines: 10 }
     // slices: {
     //   1: { offset: 0.1 }
     //   //   4: { offset: 0.3 }
@@ -965,3 +940,18 @@ function above250PieCharts() {
   );
   above250CurrentChart.draw(above250CurrentData, above250CurrentOptions);
 }
+
+$(window).resize(function() {
+  drawEmploymentStatusChart(),
+    drawEmploymentLevelOfDegreeChart(),
+    drawEmploymentStatusByGender(),
+    drawSalaryChart(),
+    drawSalaryDistributionChart(),
+    drawGraduateGotJobsChart(),
+    drawGraduatesWelfareChart(),
+    drawNairaForeignCurrencyChart(),
+    drawMediumOfCommuteChart(),
+    drawEmployingIndustriesChart(),
+    drawEducationSatisfactionChart(),
+    drawEmployabilitySkillsChart();
+});

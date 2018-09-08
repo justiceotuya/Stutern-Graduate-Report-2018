@@ -5,254 +5,397 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/index.css">
     <title>Google map</title>
 </head>
 
 <body>
-    <main>
-        <!-- Map of dtata collection state -->
-        <section class="row">
+    <section id="nav-top-page">
+        <nav class="bg-custom navbar navbar-light navbar-expand-md bg-light justify-content-center ml-sm-5">
+            <a href="/" class="navbar-brand mr-0">
+                <img src="./image/stutern-logo.svg" alt="stutern logo">
+            </a>
+            <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#introduction">Introduction <span class="sr-only">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#employment">Employment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#salaries">Salaries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#others">Others</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav flex-row justify-content-center flex-nowrap mr-sm-5">
+                    <button class="btn btn-outline-success my-2 my-sm-0 button" type="submit">Download Full Report</button>
+                </ul>
+            </div>
+        </nav>
+        <!-- <span class="navbar-text small text-truncate mt-1 w-50 text-right order-1 order-md-last">always show</span> -->
+
+        <div class="container mb-5">
+            <div class="row">
+                <div class="float-md-left col-md-4 ">
+                    <!-- <img src="./image/Map.svg" alt="Graduate Map"> -->
+                    <img id="map" src="./image/Map2x.png" srcset="./image/Map0.5x.png 300w, ./image/Map0.75x.png 768w, ./image/Map1x.png 1024w, ./image/Map2x.png 1170w,"
+                        width="100%" height="auto" alt="Graduate Map">
+                </div>
+            </div>
+
+            <div class="row">
+                <ul class="mx-auto text-center nav-list ">
+                    <li>
+                        <a href="#introduction">Introduction </a>
+                    </li>
+                    <li>
+                        <a href="#employment">Employment</a>
+                    </li>
+                    <li>
+                        <a href="#salaries">Salaries</a>
+                    </li>
+                    <li>
+                        <a href="#education">Education</a>
+                    </li>
+                    <li>
+                        <a href="#others">Others</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="introduction">
+        <div class="container ">
+
+            <div class="row ">
+
+                <div class="col-sm-6 text-white text-left mt-100">
+                    <h1 class="title">About Stutern Graduate Report</h1>
+                    <p>For the second year in a row, Stutern has tapped into the data of recent
+                        Nigerian graduates (those who graduated within the last five years) to reveal insights into
+                        Nigerian graduates
+                        employment status, as well as the hiring
+                        and the education market more generally. Because Stutern facilitates the
+                        transition from the four walls of the schools to the labor market for thousands of young
+                        Nigerians,
+                        we have a unique
+                        visibility across a variety of positions
+                        and companies.<br>
+                        Since our release of the debut edition of Stutern’s Nigerian Graduate Report,
+                        youth unemployment in Nigeria has reached its peak. This second edition
+                        of the Nigerian Graduate Report is part of our larger effort to bring more
+                        transparency into the state of graduate employment in Nigeria. Ultimately,
+                        we want to use this report to prompt all stakeholders to be aware of the
+                        importance of skills development and job creation to build a more productive
+                        youth population.</p>
+                </div>
+                <div class="col-sm-6 mt-100">
+                    <img src="./image/map-grad.png" alt="graduants cap on Nigerian map" id="map2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- //Employment status -->
+    <section id="employment">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-white text-center mt-50 mb-100 headline">EMPLOYMENT</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container card">
+            <div class="row">
+                <div class="col-sm-5 text-justify pt-50">
+                    <h1 class="title">EMPLOYMENT STATUS</h1>
+                    The majority of recent graduates aspire to find a job as soon as they
+                    graduate, but do they actually find one? According to our survey, majority of
+                    graduates who completed their studies within the last five years are currently
+                    unemployed (28.9% ) while 26.3% are working in a full time paid employment.
+                    About 1 in 6 respondents (16%) reported that they are observing the one year
+                    mandatory National Youth Service Corps (NYSC) program. While 13.4% are
+                    practicing entrepreneurship, freelance and other self employment activities,
+                    8% are involved in voluntary and other unpaid employment. The remaining
+                    7.2% are engaged or preparing for further studies.
+                </div>
+
+                <div id="employment-chart" class="column col-sm-7 pt-50"></div>
+            </div>
+            <!-- </div> -->
+
+        </div>
+    </section>
+
+    <!-- Employment status  by Degree chart -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-white text-center mt-50 mb-100 headline">EMPLOYMENT</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container card">
+        <div class="row">
+            <div class="col-sm-5 text-justify pt-50">
+                <h1 class="title">EMPLOYMENT STATUS BY LEVEL OF DEGREE</h1>
+                Our analysis shows that there are more unemployed OND (41%) and HND
+                (39%) degree holders than any other degree holders BSc. (29%), Masters (18%),
+                MBA (15%) or PhD (14%). 50% of MBA degree holders are currently employed
+                in full time paid employment, which is the most employed set of people. 25%
+                out of the total respondents are preparing for further study While 100% out
+                of the total respondents are Engaged in further study.80% out of the total
+                respondents are unemployed While 70% out of the total respondents are
+                youth corper(NYSC). 40% out of the total respondents are Self-employed/
+                freelance/entrepreneur While 25% out of the total respondents are Voluntary
+                or other unpaid work or on an.0.00% out of the total respondents are working
+                full time (paid employment)
+            </div>
+
+            <div id="emp-by-degree-chart" class="column col-sm-7 pt-50"></div>
+
+        </div>
+        <!-- </div> -->
+
+    </div>
+
+
+    <!-- Employment status  by Degree chart -->
+    <!-- <section class="row">
+        <div class="text">
+            <h1 class="title">EMPLOYMENT STATUS BY GENDER</h1>
+            Our analysis shows that there are more unemployed OND (41%) and HND
+            (39%) degree holders than any other degree holders BSc. (29%), Masters (18%),
+            MBA (15%) or PhD (14%). 50% of MBA degree holders are currently employed
+            in full time paid employment, which is the most employed set of people. 25%
+            out of the total respondents are preparing for further study While 100% out
+            of the total respondents are Engaged in further study.80% out of the total
+            respondents are unemployed While 70% out of the total respondents are
+            youth corper(NYSC). 40% out of the total respondents are Self-employed/
+            freelance/entrepreneur While 25% out of the total respondents are Voluntary
+            or other unpaid work or on an.0.00% out of the total respondents are working
+            full time (paid employment)
+        </div>
+        <div id="emp-by-degree-chart" class="column"></div>
+
+    </section> -->
+
+    <!-- Employment status  by Gender chart -->
+    <section class="row">
+        <div class="text">
+
+
+        </div>
+        <div id="emp-by-gender-chart" class="column"></div>
+
+    </section>
+
+    <!-- starting and current slary by gender -->
+    <section>
+
+        <!-- tittle of chart -->
+        <div class="row">
+            <div class="text"></div>
+            <h4 class="column-3">Starting Salary</h4>
+            <h4 class="column-3">Current Salary</h4>
+        </div>
+
+        <!-- under20kdiv -->
+        <div class="row">
             <div class="text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, aspernatur in consequatur minus
-                saepe amet itaque! Atque
-                fugiat, amet explicabo consectetur ducimus reprehenderit et vero dolorem sequi deleniti sint cum modi
-                dolor,
-                dicta rerum, minus odio! Itaque provident voluptatem ipsam.
+                Our analysis shows that the ratio of female graduate earners reduces as
+                salary raises. This is true in both the first job and current job salary for recent
+                graduates. Also, the only period when the ratio of female graduate earners
+                is above the proportion of male earners is when earnings are under N20,000
+                ($55.6).
             </div>
-            <div class="chart">
-                <div id="hero-map" class="column"></div>
-            </div>
-        </section>
+            <!-- <div class="row"> -->
+            <div id="under20kStart" class="column column-3 pie-column"></div>
+            <div id="under20kCurrent" class="column column-3 pie-column"></div>
+            <!-- </div> -->
+        </div>
 
-        <!-- Employment status chart -->
-        <section class="row">
-            <div class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                voluptates, sed natus!
-                Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae iusto
-                tempora
-                quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-            </div>
-            <div id="employment-chart" class="column"></div>
-
-        </section>
-
-        <!-- Employment status  by level of degree chart -->
-        <section class="row">
-            <div class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                voluptates, sed natus!
-                Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae iusto
-                tempora
-                quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-            </div>
-            <div id="emp-by-degree-chart" class="column"></div>
-
-        </section>
-
-        <!-- Employment status  by Gender chart -->
-        <section class="row">
-            <div class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                voluptates, sed natus!
-                Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae iusto
-                tempora
-                quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-            </div>
-            <div id="emp-by-gender-chart" class="column"></div>
-
-        </section>
-
-        <!-- starting and current slary by gender -->
-        <section>
-
-            <!-- tittle of chart -->
+        <!-- above20under49div -->
+        <div>
             <div class="row">
                 <div class="text"></div>
-                <h4 class="column-3">Starting Salary</h4>
-                <h4 class="column-3">Current Salary</h4>
+                <div id="above20under49Start" class="column column-3 pie-column"></div>
+                <div id="above20under49Current" class="column column-3 pie-column"></div>
             </div>
+        </div>
 
-            <!-- under20kdiv -->
+        <!-- above49under99 div -->
+        <div>
             <div class="row">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A impedit error deserunt eius nihil ea
-                    illo nam minima ad perferendis,
-                    beatae quos est placeat quam voluptate sint suscipit maxime quisquam.
-                </div>
-                <!-- <div class="row"> -->
-                <div id="under20kStart" class="column column-3 pie-column"></div>
-                <div id="under20kCurrent" class="column column-3 pie-column"></div>
-                <!-- </div> -->
-            </div>
-
-            <!-- above20under49div -->
-            <div>
-                <div class="row">
-                    <div class="text"></div>
-                    <div id="above20under49Start" class="column column-3 pie-column"></div>
-                    <div id="above20under49Current" class="column column-3 pie-column"></div>
-                </div>
-            </div>
-
-            <!-- above49under99 div -->
-            <div>
-                <div class="row">
-                    <div class="text"></div>
-                    <div id="above49under99Start" class="column column-3 pie-column"></div>
-                    <div id="above49under99Current" class="column column-3 pie-column"></div>
-                </div>
-            </div>
-
-            <!-- above100under149 div -->
-            <div>
-                <div class="row">
-                    <div class="text"></div>
-                    <div id="above100under149Start" class="column column-3 pie-column"></div>
-                    <div id="above100under149Current" class="column column-3 pie-column"></div>
-                </div>
-            </div>
-
-            <!-- above149under199 div -->
-            <div>
-                <div class="row">
-                    <div class="text"></div>
-                    <div id="above149under199Start" class="column column-3 pie-column"></div>
-                    <div id="above149under199Current" class="column column-3 pie-column"></div>
-                </div>
-            </div>
-
-            <!-- above200under249 div -->
-            <div>
-                <div class="row">
-                    <div class="text"></div>
-                    <div id="above200under249Start" class="column column-3 pie-column"></div>
-                    <div id="above200under249Current" class="column column-3 pie-column"></div>
-                </div>
-            </div>
-
-            <!-- above250 div -->
-            <div>
-                <div class="row">
-                    <div class="text"></div>
-                    <div id="above250Start" class="column column-3 pie-column"></div>
-                    <div id="above250Current" class="column column-3 pie-column"></div>
-                </div>
-            </div>
-
-            <!-- Salary Distribution -->
-            <div class="row">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A impedit error deserunt eius nihil ea
-                    illo nam minima ad perferendis,
-                    beatae quos est placeat quam voluptate sint suscipit maxime quisquam.
-                </div>
-                <!-- <div class="row"> -->
-                <div id="salary-distribution" class="column column-3"></div>
                 <div class="text"></div>
-                <!-- </div> -->
+                <div id="above49under99Start" class="column column-3 pie-column"></div>
+                <div id="above49under99Current" class="column column-3 pie-column"></div>
             </div>
+        </div>
+
+        <!-- above100under149 div -->
+        <div>
+            <div class="row">
+                <div class="text"></div>
+                <div id="above100under149Start" class="column column-3 pie-column"></div>
+                <div id="above100under149Current" class="column column-3 pie-column"></div>
+            </div>
+        </div>
+
+        <!-- above149under199 div -->
+        <div>
+            <div class="row">
+                <div class="text"></div>
+                <div id="above149under199Start" class="column column-3 pie-column"></div>
+                <div id="above149under199Current" class="column column-3 pie-column"></div>
+            </div>
+        </div>
+
+        <!-- above200under249 div -->
+        <div>
+            <div class="row">
+                <div class="text"></div>
+                <div id="above200under249Start" class="column column-3 pie-column"></div>
+                <div id="above200under249Current" class="column column-3 pie-column"></div>
+            </div>
+        </div>
+
+        <!-- above250 div -->
+        <div>
+            <div class="row">
+                <div class="text"></div>
+                <div id="above250Start" class="column column-3 pie-column"></div>
+                <div id="above250Current" class="column column-3 pie-column"></div>
+            </div>
+        </div>
+
+        <!-- Salary Distribution -->
+        <div class="row">
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. A impedit error deserunt eius nihil ea
+                3 out of 5 (about 60%) of Nigerian graduates earn less than 50,000 ($139) as
+                their first job monthly salary. Upon getting a later job, that number falls to
+                2 out of 5 (a little above 40%). Overall, most recent graduates earn between
+                N20,000 to N49,999 ($56 to $139) in their first job after graduation while in for
+                their later job salary, most earn between N50,000 to N99,999.
+            </div>
+            <!-- <div class="row"> -->
+            <div id="salary-distribution" class="column column-3"></div>
+            <div class="text"></div>
+            <!-- </div> -->
+        </div>
 
 
-            <!-- How graduates got their Jobs chart -->
-            <section class="row">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                    voluptates, sed natus!
-                    Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae
-                    iusto
-                    tempora quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-                </div>
-                <div id="graduate-got-jobs" class="column"></div>
+        <!-- How graduates got their Jobs chart -->
+        <section class="row">
+            <div class="text">
+                From our survey, graduates were 10 times more likely to find a job through
+                their personal contacts than through their academic institutions, 5 times
+                more likely to find a job than through traditional media and 2 times more
+                likely than through either social media network or online job sites.
+            </div>
+            <div id="graduate-got-jobs" class="column"></div>
 
-            </section>
+        </section>
 
-            <!-- ability to rent an apartment or buy a car from first job's salary -->
-            <section class="row">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                    voluptates, sed natus!
-                    Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae
-                    iusto
-                    tempora quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-                </div>
-                <div id="rent-car-from-salary" class="column"></div>
+        <!-- ability to rent an apartment or buy a car from first job's salary -->
+        <section class="row">
+            <div class="text">
+                2 in 10 full-time employed graduates within the last five years have been
+                about to either rent an apartment or buy a car from the salary gotten from
+                their job (first job and current job combined).
+            </div>
+            <div id="rent-car-from-salary" class="column"></div>
 
-            </section>
+        </section>
 
-            <!-- NAIRA AND FOREIGN CURRENCY EARNERS -->
-            <section class="row">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                    voluptates, sed natus!
-                    Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae
-                    iusto
-                    tempora quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-                </div>
+        <!-- NAIRA AND FOREIGN CURRENCY EARNERS -->
+        <section class="row">
+            <div class="text">
+                As expected, a significant chunk of recent graduates are paid in naira
+                (98.4%). Are the most paid recent graduates paid in foreign currencies?
                 <div id="naira-foreign-earners" class="column"></div>
-            </section>
-
-            <!-- MEDIUM OF COMMUTING TO WORK-->
-            <section class="row">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                    voluptates,
-                    sed natus!
-                    Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae
-                    iusto
-                    tempora quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-                </div>
-                <div id="medium-of-commuting" class="column"></div>
-            </section>
-
-            <!-- EMPLOYING INDUSTRIES-->
-            <section class="row">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                    voluptates,
-                    sed natus!
-                    Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae
-                    iusto
-                    tempora quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-                </div>
-                <div id="employing-industries" class="column"></div>
-            </section>
-
-            <!-- EDUCATION SATISFACTION-->
-            <section class="row">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                    voluptates,
-                    sed natus!
-                    Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae
-                    iusto
-                    tempora quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-                </div>
-                <div id="education-satisfaction" class="column"></div>
-            </section>
-
-            <!-- EMPLOYABILITY SKILLS-->
-            <section class="row">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum corporis cumque ea itaque similique
-                    voluptates,
-                    sed natus!
-                    Molestias laudantium aliquid similique neque quasi saepe dolor at quidem? Alias architecto beatae
-                    iusto
-                    tempora quaerat iure, ipsa, nisi commodi quasi maxime asperiores.
-                </div>
-                <div id="employability-skills" class="column"></div>
-            </section>
-
-
-
-
-
         </section>
 
-    </main>
+        <!-- MEDIUM OF COMMUTING TO WORK-->
+        <section class="row">
+            <div class="text">
+                Most of the recent graduates from our survey travels to work, through
+                the use of commercial buses (59.6%). The use of cars and tricycles (Keke
+                Napep/Maruwa) comes second and third as the most utilized channels of
+                getting to work (10.9% and 8%). On the other end, the three least employed
+                medium of journeying to work are raid hailing services (like Uber and
+                Taxify), bicycles and boat at 2.6%, 0.32% and 0.06% respectively.
+            </div>
+            <div id="medium-of-commuting" class="column"></div>
+        </section>
 
+        <!-- EMPLOYING INDUSTRIES-->
+        <section class="row">
+            <div class="text">
+                Our research shows that, although the percentage of graduates that work
+                in the education sector plummets when graduates change from their
+                first jobs to their ensuing jobs. Nevertheless, the education industry still
+                employs majority of recent graduates during their first or subsequent
+                jobs. The industries that experienced the most increase in the number of
+                recent graduates upon a switch from first jobs are media, technology and
+                healthcare sectors. Education, telecommunications and the construction
+                industry. The industries that were most stable (no rapid fall or rise) includes
+                agriculture, transportation and consulting industry.
+            </div>
+            <div id="employing-industries" class="column"></div>
+        </section>
+
+        <!-- EDUCATION SATISFACTION-->
+        <section class="row">
+            <div class="text">
+                Overall, 69.4% of the recent graduates we surveyed believed their academic
+                experience prepared them for employment. On the other hand only 28.6% of
+                employers believe most of their employees were well prepared for employment
+                by their different courses of study. Also, most graduates believed their
+                academic experience prepared them for further study than for employment
+                at 86.82%.
+            </div>
+            <div id="education-satisfaction" class="column"></div>
+        </section>
+
+        <!-- EMPLOYABILITY SKILLS-->
+        <section class="row">
+            <div class="text">
+                More than 50% of the graduates responded that their education did not
+                prepare them with skills such as knowledge of the skill(s) they studied, spoken
+                communication skills, written communication skills and the ability to solve
+                complex problems.
+            </div>
+            <div id="employability-skills" class="column"></div>
+        </section>
+
+
+
+
+
+    </section>
+
+
+    <script src="/script/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/script/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="script/index.js"></script>
 </body>
