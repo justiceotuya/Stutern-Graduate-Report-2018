@@ -29,14 +29,15 @@ function drawEmploymentStatusChart() {
   ]);
 
   var options = {
-    title: 'Employment Status',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black',
       size: '2px'
     },
-    legend: { position: 'top', alignment: 'end', maxLines: 10 },
-    // backgroundColor: { strokeWidth: 50 },
+    pieSliceText: 'none',
+    legend: {
+      position: 'labeled'
+    },
     colors: ['#2d6e64', '#53c0b6', '#f7ba44', '#f3963e', '#f06e38', '#123530']
   };
 
@@ -75,7 +76,7 @@ function drawEmploymentLevelOfDegreeChart() {
   ]);
 
   var options = {
-    title: 'Employment status  by level of degree chart',
+    pieSliceText: 'none',
     isStacked: 'percent',
     hAxis: {
       title: 'Degree',
@@ -87,9 +88,8 @@ function drawEmploymentLevelOfDegreeChart() {
       scaleType: null,
       width: 1000
     },
-    legend: {
-      position: 'right'
-    },
+    legend: { position: 'top', alignment: 'center', maxLines: 10 },
+
     bar: { groupWidth: '30%' }
   };
 
@@ -118,7 +118,6 @@ function drawEmploymentStatusByGender() {
   ]);
 
   var options = {
-    title: 'Employment status  by Gender',
     isStacked: 'percent',
     hAxis: {
       textPosition: 'out'
@@ -131,7 +130,7 @@ function drawEmploymentStatusByGender() {
       width: 1000
     },
     legend: {
-      position: 'right'
+      position: 'bottom'
     },
     bar: { groupWidth: '50%' }
   };
@@ -166,33 +165,19 @@ function drawSalaryDistributionChart() {
   ]);
 
   var options = {
-    chart: {
-      title: 'Salary Distribution',
-      fontSize: 20
-    },
     colors: ['#f06e38', '#123530'],
     orientation: 'vertical',
     hAxis: {
-      // baselineColor: 'red',
-      // baseline: 0
       format: null,
       gridlines: { color: 'transparent', count: 3 }
-      // fontSize: 100
     },
     vAxis: {
-      //   baselineColor: 'green',
-      //   // gridlines: { color: 'green', count: 8 }
       textStyle: {
         fontSize: 16,
         color: 'black'
       }
     },
-    legend: {
-      position: 'top',
-      alignment: 'end',
-      maxLines: 10,
-      textStyle: { color: 'black', fontSize: 16 }
-    }
+    legend: { position: 'bottom', textStyle: { color: 'black', fontSize: 16 } }
   };
 
   var chart = new google.charts.Bar(
@@ -216,8 +201,6 @@ function drawGraduateGotJobsChart() {
   ]);
 
   var options = {
-    title: 'How Graduates got their Jobs',
-    // pieHole: 0.1,
     pieSliceTextStyle: {
       color: 'white',
       bold: true
@@ -234,7 +217,7 @@ function drawGraduateGotJobsChart() {
 
     fontSize: 16,
     is3D: true,
-    legend: { position: 'top', alignment: 'end', maxLines: 10 },
+    legend: { position: 'top', alignment: 'center', maxLines: 10 },
     slices: {
       1: { offset: 0.3 },
       4: { offset: 0.3 }
@@ -257,7 +240,6 @@ function drawGraduatesWelfareChart() {
   ]);
 
   var options = {
-    title: "ability to rent an apartment or buy a car from first job's salary",
     pieHole: 0.9,
     pieSliceTextStyle: {
       color: 'black',
@@ -266,12 +248,7 @@ function drawGraduatesWelfareChart() {
     colors: ['#007162', '#00c7b8', '#ff9700'],
 
     fontSize: 16,
-    // is3D: true,
-    legend: { position: 'top', alignment: 'end', maxLines: 10 }
-    // slices: {
-    //   1: { offset: 0.3 },
-    //   4: { offset: 0.3 }
-    // }
+    legend: { position: 'bottom', alignment: 'center', maxLines: 2 }
   };
 
   var chart = new google.visualization.PieChart(
@@ -289,8 +266,6 @@ function drawNairaForeignCurrencyChart() {
   ]);
 
   var options = {
-    title: 'NAIRA AND FOREIGN CURRENCY EARNERS',
-    // pieHole: 0.2,
     pieSliceTextStyle: {
       color: 'black',
       bold: true
@@ -298,7 +273,7 @@ function drawNairaForeignCurrencyChart() {
     colors: ['#007162', '#00c7b8'],
     fontSize: 16,
     is3D: true,
-    legend: { position: 'top', alignment: 'end', maxLines: 10 },
+    legend: { position: 'top', alignment: 'center', maxLines: 10 },
     slices: {
       1: { offset: 0.1 }
       //   4: { offset: 0.3 }
@@ -327,7 +302,7 @@ function drawMediumOfCommuteChart() {
   ]);
 
   var options = {
-    title: 'Medium of Commuting to work',
+    pieSliceText: 'none',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black',
@@ -346,13 +321,7 @@ function drawMediumOfCommuteChart() {
     ],
 
     fontSize: 16,
-    // is3D: true,
-    legend: { position: 'top', alignment: 'end', maxLines: 10 }
-    // slices: {
-    //   1: { offset: 0.1 }
-    //   //   4: { offset: 0.3 }
-    // },
-    // pieStartAngle: 100
+    legend: { position: 'labeled', alignment: 'center', maxLines: 10 }
   };
 
   var chart = new google.visualization.PieChart(
@@ -389,21 +358,13 @@ function drawEmployingIndustriesChart() {
   ]);
 
   var options = {
-    chart: {
-      title: 'Employing Industries'
-    },
     colors: ['#2d6e61'],
     orientation: 'vertical',
     hAxis: {
       baselineColor: 'black',
       gridlines: { color: 'transparent' }
     },
-    bar: { width: 200 },
-
-    // chartArea: { width: '150%', height: '15%' },
     vAxis: {
-      //   baselineColor: 'green',
-      //   // gridlines: { color: 'green', count: 8 }
       textStyle: {
         fontSize: 15,
         color: 'black'
@@ -411,7 +372,12 @@ function drawEmployingIndustriesChart() {
     },
 
     isStacked: true,
-    legend: { textStyle: { color: 'black', fontSize: 15 } }
+    legend: {
+      position: 'none',
+      alignment: 'none',
+      maxLines: 10
+      // textStyle: { color: 'black', fontSize: 15 }
+    }
   };
 
   var chart = new google.charts.Bar(
@@ -436,8 +402,6 @@ function drawEducationSatisfactionChart() {
   ]);
 
   var options = {
-    title: 'Employment status  by level of degree chart',
-    // isStacked: 'percent',
     hAxis: {
       textPosition: 'out'
     },
@@ -445,13 +409,13 @@ function drawEducationSatisfactionChart() {
     vAxis: {
       gridlines: { color: '#fff', count: 4 },
       scaleType: null
-      // width: 1000
     },
     legend: {
-      position: 'right'
-    },
+      position: 'top',
+      alignment: 'center'
+    }
 
-    bar: { groupWidth: '30%' }
+    // bar: { groupWidth: '30%' }
   };
 
   var chart = new google.visualization.ColumnChart(
@@ -471,7 +435,6 @@ function drawEmployabilitySkillsChart() {
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Ability');
   data.addColumn('number', 'Percent');
-  // data.addColumn('number', 'Further Studies');
 
   data.addRows([
     [{ v: 'Critical thinking skills', f: 'Critical thinking skills' }, 55.2],
@@ -505,34 +468,18 @@ function drawEmployabilitySkillsChart() {
   ]);
 
   var options = {
-    title: 'Employability Skills',
-    // isStacked: 'percent',
     hAxis: {
       textPosition: 'out',
-      // slantedText: true,
       slantedTextAngle: 20
-      // maxTextLines: 1,
-      // maxAlternation: 1
     },
-    colors: [
-      // '#123530',
-      '#2d6e61',
-      '#54c3b6',
-      '#46a6a1',
-      '#456b69',
-      '#59cdc2',
-      '#347d70'
-    ],
+    colors: ['#2d6e61', '#54c3b6', '#46a6a1', '#456b69', '#59cdc2', '#347d70'],
     vAxis: {
       gridlines: { color: '#fff', count: 4 },
       scaleType: null
-      // width: 1000
     },
     legend: {
       position: 'none'
-    },
-
-    bar: { groupWidth: '30%' }
+    }
   };
 
   var chart = new google.visualization.ColumnChart(
@@ -563,28 +510,29 @@ function under20kPieCharts() {
 
   //pie options
   var under20kStartOptions = {
-    title: 'Under ₦20,000',
+    title: 'Starting Salary',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: true,
-    // backgroundColor: { strokeWidth: 10 },
+    pieSliceText: 'none',
+    legend: 'labeled',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   var under20kCurrentOptions = {
+    title: 'Current Salary',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: false,
-    // backgroundColor: { strokeWidth: 10 },
+    pieSliceText: 'none',
+    legend: 'labeled',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   // drawing the pie
@@ -615,28 +563,29 @@ function above20under49PieCharts() {
 
   //pie options
   var above20under49StartOptions = {
-    title: '₦20,001 - ₦49, 999',
+    title: 'Starting Salary',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: true,
-    // backgroundColor: { strokeWidth: 10 },
+    pieSliceText: 'none',
+    legend: 'labeled',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   var above20under49CurrentOptions = {
+    title: 'Current Salary',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: false,
-    // backgroundColor: { strokeWidth: 10 },
+    pieSliceText: 'none',
+    legend: 'labeled',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   // drawing the pie
@@ -673,28 +622,29 @@ function above49under99PieCharts() {
 
   //pie options
   var above49under99StartOptions = {
-    title: '₦50,000 - ₦99,999',
+    title: 'Starting Salary',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: true,
-    // backgroundColor: { strokeWidth: 10 },
+    pieSliceText: 'none',
+    legend: 'labeled',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   var above49under99CurrentOptions = {
+    title: 'Current Salary',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: false,
-    // backgroundColor: { strokeWidth: 10 },
+    pieSliceText: 'none',
+    legend: 'labeled',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   // drawing the pie
@@ -731,28 +681,33 @@ function above100under149PieCharts() {
 
   //pie options
   var above100under149StartOptions = {
-    title: '₦100,000 - ₦149,999',
+    title: 'Starting Salary',
     pieHole: 0.8,
+    pieSliceText: 'none',
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: true,
-    // backgroundColor: { strokeWidth: 10 },
+    legend: {
+      position: 'labeled'
+    },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   var above100under149CurrentOptions = {
+    title: 'Current Salary',
     pieHole: 0.8,
+    pieSliceText: 'none',
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: false,
-    // backgroundColor: { strokeWidth: 10 },
+    legend: {
+      position: 'labeled'
+    },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   // drawing the pie
@@ -789,28 +744,34 @@ function above149under199PieCharts() {
 
   //pie options
   var above149under199StartOptions = {
-    title: '₦150,000 - ₦199,999',
+    title: 'Starting Salary',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: true,
-    // backgroundColor: { strokeWidth: 10 },
+    pieSliceText: 'none',
+    legend: {
+      position: 'labeled'
+    },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    // //forceIFrame: true
   };
 
   var above149under199CurrentOptions = {
+    title: 'Current Salary',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: false,
-    // backgroundColor: { strokeWidth: 10 },
+    pieSliceText: 'none',
+
+    legend: {
+      position: 'labeled'
+    },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   // drawing the pie
@@ -847,28 +808,33 @@ function above200under249PieCharts() {
 
   //pie options
   var above200under249StartOptions = {
-    title: '₦200,000 - ₦249,999',
+    title: 'Starting Salary',
     pieHole: 0.8,
+    pieSliceText: 'none',
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: true,
-    // backgroundColor: { strokeWidth: 10 },
+    legend: {
+      position: 'labeled'
+    },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   var above200under249CurrentOptions = {
+    title: 'Current Salary',
     pieHole: 0.8,
+    pieSliceText: 'none',
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: false,
-    // backgroundColor: { strokeWidth: 10 },
+    legend: {
+      position: 'labeled'
+    },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   // drawing the pie
@@ -905,28 +871,33 @@ function above250PieCharts() {
 
   //pie options
   var above250StartOptions = {
-    title: '₦250,000 and more',
+    title: 'Starting Salary',
+    pieSliceText: 'none',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: true,
-    // backgroundColor: { strokeWidth: 10 },
+    legend: {
+      position: 'labeled'
+    },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    //forceIFrame: true
   };
 
   var above250CurrentOptions = {
+    title: 'Current Salary',
+    pieSliceText: 'none',
     pieHole: 0.8,
     pieSliceTextStyle: {
       color: 'black'
     },
-    legend: false,
-    // backgroundColor: { strokeWidth: 10 },
+    legend: {
+      position: 'labeled'
+    },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
-    // forceIFrame: true
+    // //forceIFrame: true
   };
 
   // drawing the pie
@@ -941,6 +912,8 @@ function above250PieCharts() {
   above250CurrentChart.draw(above250CurrentData, above250CurrentOptions);
 }
 
+
+//resize charts
 $(window).resize(function() {
   drawEmploymentStatusChart(),
     drawEmploymentLevelOfDegreeChart(),
@@ -954,4 +927,26 @@ $(window).resize(function() {
     drawEmployingIndustriesChart(),
     drawEducationSatisfactionChart(),
     drawEmployabilitySkillsChart();
+});
+
+//sliders for icon
+$('.customer-logos').slick({
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 1000,
+  arrows: false,
+  dots: false,
+  pauseOnHover: false,
+  responsive: [{
+    breakpoint: 768,
+    settings: {
+      slidesToShow: 4
+    }
+  }, {
+    breakpoint: 520,
+    settings: {
+      slidesToShow: 3
+    }
+  }]
 });

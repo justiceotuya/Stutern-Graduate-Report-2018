@@ -1,5 +1,15 @@
 /* Always set the map height explicitly to define the size of the div
            * element that contains the map. */
+html,
+body,
+main {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+}
 
 #map {
   width: 100%;
@@ -24,8 +34,39 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+#introduction div.row {
+  padding-bottom: 100px;
+}
+
 #employment {
   background-image: url('/image/shake-hands.png');
+  background-position: cover;
+  background-repeat: no-repeat;
+  margin-top: 0;
+}
+
+#salaries {
+  background-image: url('/image/salaries.svg');
+  background-position: cover;
+  background-repeat: no-repeat;
+  margin-top: 0;
+}
+
+#welfare {
+  background-image: url('/image/welfare.svg');
+  background-position: cover;
+  background-repeat: no-repeat;
+  margin-top: 0;
+}
+
+#education {
+  background-image: url('/image/education.svg');
+  background-position: cover;
+  background-repeat: no-repeat;
+  margin-top: 0;
+}
+#others {
+  background-image: url('/image/others.svg');
   background-position: cover;
   background-repeat: no-repeat;
   margin-top: 0;
@@ -44,7 +85,8 @@ button:hover {
   border: 1px solid #000 !important;
 }
 
-ul.nav-list {
+ul.nav-list,
+.social ul {
   display: flex;
   flex-direction: row;
   padding: 0;
@@ -54,9 +96,23 @@ li {
   margin-left: auto;
   margin-right: auto;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 15px;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
+}
+.social li {
+  padding: 0 5px;
+  font-size: 16px;
+  margin-left: 0;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.second-nav {
+  display: none;
+}
+.second-nav li {
+  padding: 0 30px;
 }
 li a {
   color: #fff !important;
@@ -68,16 +124,11 @@ li a:hover {
   text-decoration: none;
 }
 
-/* Optional: Makes the sample page fill the window. */
-html,
-body,
-main {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  font-family: 'Work Sans', sans-serif;
+.copyright a {
+  font-size: 12px;
+  color: #000;
 }
+/* Optional: Makes the sample page fill the window. */
 
 .headline {
   font-size: 35px;
@@ -107,6 +158,20 @@ main {
 .button {
   font-size: 20px;
   font-weight: 600;
+  color: black !important;
+}
+button a {
+  color: #000 !important;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+button a:hover {
+  color: #fff !important;
+  text-decoration: none;
 }
 
 #nav-top-page {
@@ -148,12 +213,23 @@ main {
 .pb-50 {
   margin-bottom: 50px;
 }
+.pt-100 {
+  padding-top: 100px;
+}
+.pb-100 {
+  padding-bottom: 100px;
+}
+
 .card {
   width: 100% !important;
   margin-top: -50px !important;
   border-radius: 0px;
   padding: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 100px;
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  z-index: 6;
 }
 
 .text,
@@ -168,13 +244,137 @@ main {
 }
 .column {
   width: 100%;
-  min-height: 450px;
+  min-height: 200px;
+}
+.column2x {
+  width: 100%;
+  min-height: 500px;
+}
+
+.mobile-nav {
+  display: block;
 }
 
 #employing-industries {
   height: 800px;
 }
 
+footer {
+  background-color: #2d6e61;
+}
+#form-section {
+  background-color: #f0fdfc;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  margin-top: -200px;
+  z-index: 4;
+  font-size: 24px;
+}
+
+/* Slider */
+.slick-slide {
+  margin: 0px 50px;
+  padding: 0px 20px;
+}
+
+.slick-slide img {
+  /* width: 100%; */
+}
+
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: '';
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+[dir='rtl'] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.footer-text {
+  padding-top: 40px;
+  font-size: 14px;
+}
 @media screen and (min-width: 750px) {
   #map {
     width: 150%;
@@ -187,22 +387,18 @@ main {
   .text {
     width: 20%;
   }
-
   .column {
-    /* /* max-width: 900px; */
-    /* margin: 0 auto; */
-    height: 500px;
-    width: 80%;
+    width: 150%;
+    min-height: 200px;
   }
-
-  .column-3 {
-    /* width: 100%; */
-    width: 40%;
+  .column2x {
+    width: 150%;
+    min-height: 500px;
   }
-
-  .pie-column {
-    height: 300px;
-    /* height: 500px; */
-    /* width: 80%; */
+  .second-nav {
+    display: block;
+  }
+  .mobile-nav {
+    display: none;
   }
 }
