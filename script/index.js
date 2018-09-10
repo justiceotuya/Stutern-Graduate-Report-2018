@@ -961,12 +961,12 @@ $(document).scroll(function() {
     $('nav')
       .removeClass('bg-custom')
       .addClass('bg-custom-fixed ');
-    $('#go-to-top').css({ transition: '500ms ease', display: 'block' });
+    $('#go-to-top').css({ transition: '200ms ease-in', display: 'block' });
   } else {
     $('.nav-item a').addClass('mobile-nav');
     $('nav')
       .removeClass('bg-custom-fixed')
       .addClass('bg-custom');
-    $('#go-to-top').css({ transition: '500ms ease', display: 'none' });
+    $('#go-to-top').css({ transition: '200ms ease-out', display: 'none' });
   }
 });

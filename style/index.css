@@ -46,34 +46,34 @@ main {
 }
 
 #employment {
-  background-image: url('/image/shake-hands.png');
+  background-image: url('../image/shake-hands.png');
   background-position: cover;
   background-repeat: no-repeat;
   margin-top: 0;
 }
 
 #salaries {
-  background-image: url('/image/salaries2.svg');
+  background-image: url('../image/salaries2.svg');
   background-position: cover;
   background-repeat: no-repeat;
   margin-top: 0;
 }
 
 #welfare {
-  background-image: url('/image/welfare.svg');
+  background-image: url('../image/welfare.svg');
   background-position: cover;
   background-repeat: no-repeat;
   margin-top: 0;
 }
 
 #education {
-  background-image: url('/image/education.svg');
+  background-image: url('../image/education.svg');
   background-position: cover;
   background-repeat: no-repeat;
   margin-top: 0;
 }
 #others {
-  background-image: url('/image/others.svg');
+  background-image: url('../image/others.svg');
   background-position: cover;
   background-repeat: no-repeat;
   margin-top: 0;
