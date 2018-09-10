@@ -516,7 +516,7 @@ function under20kPieCharts() {
       color: 'black'
     },
     pieSliceText: 'none',
-    legend: 'labeled',
+    legend: 'top',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     //forceIFrame: true
@@ -529,7 +529,7 @@ function under20kPieCharts() {
       color: 'black'
     },
     pieSliceText: 'none',
-    legend: 'labeled',
+    legend: 'top',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     //forceIFrame: true
@@ -569,7 +569,7 @@ function above20under49PieCharts() {
       color: 'black'
     },
     pieSliceText: 'none',
-    legend: 'labeled',
+    legend: 'top',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     //forceIFrame: true
@@ -582,7 +582,7 @@ function above20under49PieCharts() {
       color: 'black'
     },
     pieSliceText: 'none',
-    legend: 'labeled',
+    legend: 'top',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     //forceIFrame: true
@@ -628,7 +628,7 @@ function above49under99PieCharts() {
       color: 'black'
     },
     pieSliceText: 'none',
-    legend: 'labeled',
+    legend: 'top',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     //forceIFrame: true
@@ -641,7 +641,7 @@ function above49under99PieCharts() {
       color: 'black'
     },
     pieSliceText: 'none',
-    legend: 'labeled',
+    legend: 'top',
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
     //forceIFrame: true
@@ -688,7 +688,7 @@ function above100under149PieCharts() {
       color: 'black'
     },
     legend: {
-      position: 'labeled'
+      position: 'top'
     },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
@@ -703,7 +703,7 @@ function above100under149PieCharts() {
       color: 'black'
     },
     legend: {
-      position: 'labeled'
+      position: 'top'
     },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
@@ -751,7 +751,7 @@ function above149under199PieCharts() {
     },
     pieSliceText: 'none',
     legend: {
-      position: 'labeled'
+      position: 'top'
     },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
@@ -767,7 +767,7 @@ function above149under199PieCharts() {
     pieSliceText: 'none',
 
     legend: {
-      position: 'labeled'
+      position: 'top'
     },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
@@ -815,7 +815,7 @@ function above200under249PieCharts() {
       color: 'black'
     },
     legend: {
-      position: 'labeled'
+      position: 'top'
     },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
@@ -830,7 +830,7 @@ function above200under249PieCharts() {
       color: 'black'
     },
     legend: {
-      position: 'labeled'
+      position: 'top'
     },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
@@ -878,7 +878,7 @@ function above250PieCharts() {
       color: 'black'
     },
     legend: {
-      position: 'labeled'
+      position: 'top'
     },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
@@ -893,7 +893,7 @@ function above250PieCharts() {
       color: 'black'
     },
     legend: {
-      position: 'labeled'
+      position: 'top'
     },
     colors: ['#54c3b6', '#f3993e'],
     fontSize: 15
@@ -911,7 +911,6 @@ function above250PieCharts() {
   );
   above250CurrentChart.draw(above250CurrentData, above250CurrentOptions);
 }
-
 
 //resize charts
 $(window).resize(function() {
@@ -938,15 +937,36 @@ $('.customer-logos').slick({
   arrows: false,
   dots: false,
   pauseOnHover: false,
-  responsive: [{
-    breakpoint: 768,
-    settings: {
-      slidesToShow: 4
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4
+      }
+    },
+    {
+      breakpoint: 520,
+      settings: {
+        slidesToShow: 3
+      }
     }
-  }, {
-    breakpoint: 520,
-    settings: {
-      slidesToShow: 3
-    }
-  }]
+  ]
+});
+
+//scroll function
+$(document).scroll(function() {
+  var y = $(this).scrollTop();
+  if (y > 550) {
+    $('.nav-item a').removeClass('mobile-nav');
+    $('nav')
+      .removeClass('bg-custom')
+      .addClass('bg-custom-fixed ');
+    $('#go-to-top').css({ transition: '500ms ease', display: 'block' });
+  } else {
+    $('.nav-item a').addClass('mobile-nav');
+    $('nav')
+      .removeClass('bg-custom-fixed')
+      .addClass('bg-custom');
+    $('#go-to-top').css({ transition: '500ms ease', display: 'none' });
+  }
 });
