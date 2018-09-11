@@ -177,7 +177,10 @@ function drawSalaryDistributionChart() {
         color: 'black'
       }
     },
-    legend: { position: 'bottom', textStyle: { color: 'black', fontSize: 16 } }
+    legend: {
+      position: 'bottom',
+      textStyle: { color: 'black', fontSize: 16 }
+    }
   };
 
   var chart = new google.charts.Bar(
@@ -450,7 +453,10 @@ function drawEmployabilitySkillsChart() {
       54.7
     ],
     [
-      { v: 'Written communication skills', f: 'Written communication skills' },
+      {
+        v: 'Written communication skills',
+        f: 'Written communication skills'
+      },
       45.6
     ],
     [
