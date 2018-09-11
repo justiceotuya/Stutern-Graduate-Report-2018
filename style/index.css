@@ -11,6 +11,11 @@ main {
   font-size: 18px;
 }
 
+.row:before,
+.row:after {
+  display: none !important;
+}
+
 #map {
   width: 100%;
   padding: 50px 0;
@@ -128,14 +133,14 @@ li {
 .second-nav li {
   padding: 0 20px;
   position: relative;
-  top: 20vh;
+  top: 10vw;
 }
 
 .second-nav-icon li {
   padding: 0 20px;
   position: relative;
-  top: 20vh;
-  right: -2vh;
+  top: 10vw;
+  right: -2vw;
 }
 
 #employment-icon {
