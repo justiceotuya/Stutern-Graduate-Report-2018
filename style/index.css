@@ -163,6 +163,16 @@ li {
   top: 50px;
 }
 
+.subject-card {
+  transform: scale(1);
+  transition: 200ms ease-in-out;
+}
+
+.subject-card:hover {
+  transform: scale(1.3);
+  transition: 200ms ease-in-out;
+}
+
 li a {
   color: #fff !important;
   font-weight: bold;
