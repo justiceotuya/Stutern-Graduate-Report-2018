@@ -23,8 +23,8 @@ function drawEmploymentStatusChart() {
   var data = google.visualization.arrayToDataTable([
     ['Employment Status', 'Hours per Day'],
     ['Working Full time', 1371],
-    ['Voluntary or unpaid internship', 417],
-    ['Self Employed or Freelance', 700],
+    ['Voluntary/ Internship', 417],
+    ['Self Employed', 700],
     ['NYSC', 842],
     ['Unemployed', 1509],
     ['Engaged/ Preparing for Further Studies', 380]
@@ -36,10 +36,8 @@ function drawEmploymentStatusChart() {
       color: 'black',
       size: '2px'
     },
-    pieSliceText: 'none',
-    legend: {
-      position: 'labeled'
-    },
+    pieSliceText: true,
+    legend: { position: 'top', alignment: 'center', maxLines: 10 },
     colors: ['#2d6e64', '#53c0b6', '#f7ba44', '#f3963e', '#f06e38', '#123530']
   };
 
@@ -53,8 +51,8 @@ function drawEmploymentStatusChart() {
 function drawEmploymentLevelOfDegreeChart() {
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Degree');
-  data.addColumn('number', 'Working full Time');
-  data.addColumn('number', 'Voluntary/Internship');
+  data.addColumn('number', 'Full Time');
+  data.addColumn('number', 'Internship');
   data.addColumn('number', 'Self Employed');
   data.addColumn('number', 'NYSC');
   data.addColumn('number', 'Preparing for Further studies');
@@ -63,16 +61,8 @@ function drawEmploymentLevelOfDegreeChart() {
   data.addRows([
     [{ v: 'OND', f: 'OND' }, 12, 16, 18, 0, 23, 47],
     [{ v: 'HND', f: 'HND' }, 71, 13, 73, 58, 8, 145],
-    [
-      { v: 'BACHELOR DEGREE', f: 'BACHELOR DEGREE' },
-      1158,
-      366,
-      548,
-      778,
-      294,
-      1258
-    ],
-    [{ v: 'MASTERS', f: 'MASTERS DEGREE' }, 118, 21, 54, 5, 53, 55],
+    [{ v: 'BACHELOR DEGREE', f: 'BSc' }, 1158, 366, 548, 778, 294, 1258],
+    [{ v: 'MASTERS', f: 'MSc' }, 118, 21, 54, 5, 53, 55],
     [{ v: 'MBA', f: 'MBA' }, 10, 0, 5, 1, 1, 3],
     [{ v: 'PHD', f: 'PHD' }, 2, 1, 2, 0, 1, 1]
   ]);
@@ -175,13 +165,12 @@ function drawSalaryDistributionChart() {
     },
     vAxis: {
       textStyle: {
-        fontSize: 16,
         color: 'black'
       }
     },
     legend: {
       position: 'bottom',
-      textStyle: { color: 'black', fontSize: 16 }
+      textStyle: { color: 'black' }
     }
   };
 
@@ -197,11 +186,11 @@ function drawGraduateGotJobsChart() {
   var data = google.visualization.arrayToDataTable([
     ['How Graduates got their jobs', 'Hours per Day'],
     ['Internship', 220],
-    ['Employers Website', 95],
+    ['Employers site', 95],
     ['Personal Contact', 1448],
-    ['Social media/professional networking sites', 639],
-    ['University / polytechnic(e.g.Careers Service, lecturer, website)', 151],
-    ['Recruitment agency/Online job site', 612],
+    ['Networking sites', 639],
+    ['University', 151],
+    ['Agencies', 612],
     ['Media', 267]
   ]);
 
@@ -220,9 +209,8 @@ function drawGraduateGotJobsChart() {
       '#4d736d'
     ],
 
-    fontSize: 16,
     is3D: true,
-    legend: { position: 'top', alignment: 'center', maxLines: 10 },
+    legend: { position: 'top', alignment: 'start', maxLines: 8 },
     slices: {
       1: { offset: 0.3 },
       4: { offset: 0.3 }
@@ -239,7 +227,7 @@ function drawGraduateGotJobsChart() {
 function drawGraduatesWelfareChart() {
   var data = google.visualization.arrayToDataTable([
     ['Count', 'Rate'],
-    ['Yes: From my first job', 271],
+    ['Yes', 271],
     ['No: From my current job', 466],
     ['No', 2965]
   ]);
@@ -252,8 +240,8 @@ function drawGraduatesWelfareChart() {
     },
     colors: ['#007162', '#00c7b8', '#ff9700'],
 
-    fontSize: 16,
-    legend: { position: 'bottom', alignment: 'center', maxLines: 2 }
+    //
+    legend: { position: 'bottom', alignment: 'end', maxLines: 2 }
   };
 
   var chart = new google.visualization.PieChart(
@@ -276,7 +264,7 @@ function drawNairaForeignCurrencyChart() {
       bold: true
     },
     colors: ['#007162', '#00c7b8'],
-    fontSize: 16,
+
     is3D: true,
     legend: { position: 'top', alignment: 'center', maxLines: 10 },
     slices: {
@@ -295,13 +283,13 @@ function drawNairaForeignCurrencyChart() {
 function drawMediumOfCommuteChart() {
   var data = google.visualization.arrayToDataTable([
     ['Transport mode', 'Rate'],
-    ['Water / Ferry', 2],
+    ['Ferry', 2],
     ['Bicycle', 11],
     ['Motorcycle', 216],
     ['Walking', 175],
     ['Keke', 273],
     ['Car', 374],
-    ['Uber/Taxify/Taxi services', 90],
+    ['Taxi services', 90],
     ['BRT', 243],
     ['Commercial Vehicle ', 2045]
   ]);
@@ -325,8 +313,7 @@ function drawMediumOfCommuteChart() {
       '#2d6e61'
     ],
 
-    fontSize: 16,
-    legend: { position: 'labeled', alignment: 'center', maxLines: 10 }
+    legend: { position: 'top', alignment: 'center', maxLines: 10 }
   };
 
   var chart = new google.visualization.PieChart(
@@ -371,7 +358,6 @@ function drawEmployingIndustriesChart() {
     },
     vAxis: {
       textStyle: {
-        fontSize: 15,
         color: 'black'
       }
     },
@@ -381,7 +367,7 @@ function drawEmployingIndustriesChart() {
       position: 'none',
       alignment: 'none',
       maxLines: 10
-      // textStyle: { color: 'black', fontSize: 15 }
+      // textStyle: { color: 'black',  }
     }
   };
 
@@ -525,8 +511,8 @@ function under20kPieCharts() {
     },
     pieSliceText: 'none',
     legend: 'top',
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -538,8 +524,8 @@ function under20kPieCharts() {
     },
     pieSliceText: 'none',
     legend: 'top',
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -578,8 +564,8 @@ function above20under49PieCharts() {
     },
     pieSliceText: 'none',
     legend: 'top',
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -591,8 +577,8 @@ function above20under49PieCharts() {
     },
     pieSliceText: 'none',
     legend: 'top',
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -637,8 +623,8 @@ function above49under99PieCharts() {
     },
     pieSliceText: 'none',
     legend: 'top',
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -650,8 +636,8 @@ function above49under99PieCharts() {
     },
     pieSliceText: 'none',
     legend: 'top',
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -698,8 +684,8 @@ function above100under149PieCharts() {
     legend: {
       position: 'top'
     },
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -713,8 +699,8 @@ function above100under149PieCharts() {
     legend: {
       position: 'top'
     },
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -761,8 +747,8 @@ function above149under199PieCharts() {
     legend: {
       position: 'top'
     },
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     // //forceIFrame: true
   };
 
@@ -777,8 +763,8 @@ function above149under199PieCharts() {
     legend: {
       position: 'top'
     },
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -825,8 +811,8 @@ function above200under249PieCharts() {
     legend: {
       position: 'top'
     },
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -840,8 +826,8 @@ function above200under249PieCharts() {
     legend: {
       position: 'top'
     },
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -888,8 +874,8 @@ function above250PieCharts() {
     legend: {
       position: 'top'
     },
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     //forceIFrame: true
   };
 
@@ -903,8 +889,8 @@ function above250PieCharts() {
     legend: {
       position: 'top'
     },
-    colors: ['#54c3b6', '#f3993e'],
-    fontSize: 15
+    colors: ['#54c3b6', '#f3993e']
+
     // //forceIFrame: true
   };
 

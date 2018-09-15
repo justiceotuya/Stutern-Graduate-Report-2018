@@ -357,6 +357,9 @@ button:hover a {
 .mobile-nav {
   display: block;
 }
+.desktop-nav {
+  display: none;
+}
 
 #employing-industries {
   height: 800px;
@@ -516,6 +519,10 @@ footer {
   }
   .mobile-nav {
     display: none;
+  }
+
+  .desktop-nav {
+    display: block;
   }
 
   #go-to-top-icon {
