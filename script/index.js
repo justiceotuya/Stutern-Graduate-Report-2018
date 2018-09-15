@@ -16,6 +16,8 @@ google.charts.setOnLoadCallback(drawEmployingIndustriesChart);
 google.charts.setOnLoadCallback(drawEducationSatisfactionChart);
 google.charts.setOnLoadCallback(drawEmployabilitySkillsChart);
 
+//map of Nigeria
+
 //Employment Status chart
 function drawEmploymentStatusChart() {
   var data = google.visualization.arrayToDataTable([
@@ -962,17 +964,19 @@ $('.customer-logos').slick({
 //scroll function
 $(document).scroll(function() {
   var y = $(this).scrollTop();
-  if (y > 550) {
+  if (y > 500) {
     $('.nav-item a').removeClass('mobile-nav');
     $('nav')
       .removeClass('bg-custom')
       .addClass('bg-custom-fixed ');
     $('#go-to-top').css({ transition: '200ms ease-in', display: 'block' });
+    $('li a').css({ color: 'black !important' });
   } else {
     $('.nav-item a').addClass('mobile-nav');
     $('nav')
       .removeClass('bg-custom-fixed')
       .addClass('bg-custom');
     $('#go-to-top').css({ transition: '200ms ease-out', display: 'none' });
+    $('li a').css({ color: 'white !important' });
   }
 });

@@ -23,7 +23,7 @@
 
 <body>
     <section id="nav-top-page">
-        <nav class="bg-custom navbar navbar-dark navbar-expand-md bg-light justify-content-center fixed-top">
+        <nav class="bg-custom navbar navbar-dark navbar-expand-md bg-light justify-content-between fixed-top">
             <a href="/" class="navbar-brand mr-0">
                 <img src="./image/stutern-logo.svg" alt="stutern logo">
             </a>
@@ -60,84 +60,85 @@
 
         <!-- navigation icon -->
 
-        <div class="col-sm-4 offset-sm-7 text-white text-left intro-text mt-50 pt-100">
-            <div class="row text-left">
-                <span id="percent">60%</span>
+        <div class="row">
+            <div class="col-lg-4 offset-lg-7 col-md-7 offset-md-4 text-white text-left intro-text">
+                <p class="percent">60%</p>
                 <p>Nigerian Graduates who earn less
                     than ₦50,000</p>
+
+                <p class="percent text-left">Computer Science</p>
+                <p>Most Employable Course</p>
+
+                <div class="col-md-7 col-lg-4 px-0">
+                    <button class="btn btn-outline-success mt-10 button"><a href="#">Download Full
+                            Report</a></button>
+                </div>
             </div>
-            <div class="row ">
-                <span id="percent">Computer Science</span>
+        </div>
+        </div>
+
+        <section id="nav-down" class="col-12 text-center">
+            <div class="second-nav-icon">
+                <ul class="row nav-list">
+                    <li>
+                        <a href="#introduction">
+                            <img src="./image/logo/icons/navigation-menu.svg" alt="introduction icon" class="introduction-nav"
+                                id="introduction-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#employment">
+                            <img src="./image/logo/icons/office-employee.svg" alt="employment icon" id="employment-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#salaries">
+                            <img src="./image/logo/icons/cash-briefcase.svg" alt="Briefcase" id="salary-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#welfare">
+                            <img src="./image/logo/icons/cash-briefcase-1.svg" alt="Briefcase" id="welfare-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#education">
+                            <img src="./image/logo/icons/design-drawing-board-education.svg" alt="drawing board" id="education-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#others">
+                            <img src="./image/logo/icons/Vector.svg" alt="others icon" id="others-icon">
+                        </a>
+                    </li>
+                </ul>
             </div>
-            Most Employable Course
+            <div class="row second-nav">
+                <ul class="mx-auto text-center nav-list ">
+                    <li>
+                        <a href="#introduction">Introduction </a>
+                    </li>
 
-            <div class="row">
-                <button class="btn btn-outline-success mt-50"><a href="#">Download Full
-                        Report</a></button>
+                    <li>
+                        <a href="#employment">Employment</a>
+                    </li>
+
+                    <li>
+                        <a href="#salaries">Salaries</a>
+                    </li>
+                    <li>
+                        <a href="#welfare">Welfare</a>
+                    </li>
+
+                    <li>
+                        <a href="#education">Education</a>
+                    </li>
+                    <li>
+                        <a href="#others">Others</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-
-        <div class="second-nav-icon">
-            <ul class="row nav-list">
-                <li>
-                    <a href="#introduction">
-                        <img src="./image/logo/icons/navigation-menu.svg" alt="introduction icon" class="introduction-nav"
-                            id="introduction-icon">
-                    </a>
-                </li>
-                <li>
-                    <a href="#employment">
-                        <img src="./image/logo/icons/office-employee.svg" alt="employment icon" id="employment-icon">
-                    </a>
-                </li>
-                <li>
-                    <a href="#welfare">
-                        <img src="./image/logo/icons/cash-briefcase-1.svg" alt="Briefcase" id="welfare-icon">
-                    </a>
-                </li>
-                <li>
-                    <a href="#salaries">
-                        <img src="./image/logo/icons/cash-briefcase.svg" alt="Briefcase" id="salary-icon">
-                    </a>
-                </li>
-                <li>
-                    <a href="#education">
-                        <img src="./image/logo/icons/design-drawing-board-education.svg" alt="drawing board" id="education-icon">
-                    </a>
-                </li>
-                <li>
-                    <a href="#others">
-                        <img src="./image/logo/icons/Vector.svg" alt="others icon" id="others-icon">
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="row second-nav">
-            <ul class="mx-auto text-center nav-list ">
-                <li>
-                    <a href="#introduction">Introduction </a>
-                </li>
-
-                <li>
-                    <a href="#employment">Employment</a>
-                </li>
-
-                <li>
-                    <a href="#salaries">Salaries</a>
-                </li>
-                <li>
-                    <a href="#welfare">Welfare</a>
-                </li>
-
-                <li>
-                    <a href="#education">Education</a>
-                </li>
-                <li>
-                    <a href="#others">Others</a>
-                </li>
-            </ul>
-        </div>
-        </div>
+        </section>
 
     </section>
 
@@ -212,6 +213,8 @@
         <!-- Employment status  by Degree chart -->
         <div class="container card">
             <div class="row">
+
+                <div id="emp-by-degree-chart" class="column col-md-7 pt-50"></div>
                 <div class="col-md-5 text-justify pt-50">
                     <h1 class="title">EMPLOYMENT STATUS BY LEVEL OF DEGREE</h1>
                     Our analysis shows that there are more unemployed OND (41%) and HND
@@ -226,8 +229,6 @@
                     or other unpaid work or on an.0.00% out of the total respondents are working
                     full time (paid employment)
                 </div>
-
-                <div id="emp-by-degree-chart" class="column col-md-7 pt-50"></div>
 
             </div>
             <!-- </div> -->
@@ -349,6 +350,8 @@
         <!-- Salary Distribution -->
         <div class="container card">
             <div class="row">
+
+                <div id="salary-distribution" class="column2x col-md-7"></div>
                 <div class="col-md-5 text-justify pt-50">
                     <h1 class="title">SALARY DISTRIBUTION</h1>
                     3 out of 5 (about 60%) of Nigerian graduates earn less than 50,000 ($139) as
@@ -357,8 +360,6 @@
                     N20,000 to N49,999 ($56 to $139) in their first job after graduation while in for
                     their later job salary, most earn between N50,000 to N99,999.
                 </div>
-
-                <div id="salary-distribution" class="column2x col-md-7"></div>
             </div>
         </div>
 
@@ -409,8 +410,9 @@
         <!-- MEDIUM OF COMMUTING TO WORK-->
         <div class="container card">
             <div class="row">
-                <div class="col-md-5 text-justify pt-50">
-                    <h1 class="title text-left">MEDIUM OF COMMUTING TO WORK</h1>
+                <div class="col-12 text-left pt-50">
+                    <h1 class="title text-center">MEDIUM OF COMMUTING TO WORK</h1>
+                    <div id="medium-of-commuting" class="column col-12"></div>
                     Most of the recent graduates from our survey travels to work, through
                     the use of commercial buses (59.6%). The use of cars and tricycles (Keke
                     Napep/Maruwa) comes second and third as the most utilized channels of
@@ -419,7 +421,6 @@
                     Taxify), bicycles and boat at 2.6%, 0.32% and 0.06% respectively.
                 </div>
 
-                <div id="medium-of-commuting" class="column col-md-7 pt-50"></div>
 
             </div>
             <!-- </div> -->
@@ -571,7 +572,7 @@
 
             <div class="container card">
                 <div class="row">
-                    <div class="col-md-12 text-justify pb-50 column">
+                    <div class="col-md-12 text-justify column">
                         <h1 class="title text-left">EMPLOYING INDUSTRIES</h1>
                         Our research shows that, although the percentage of graduates that work
                         in the education sector plummets when graduates change from their
@@ -585,7 +586,9 @@
                     </div>
 
 
-                    <div id="employing-industries" class="column2x col-md-12 pb-50"></div>
+                    <div id="employing-industries" class="column2x col-md-12 pb-50">
+                        <caption>hover</caption>
+                    </div>
                 </div>
             </div>
         </section>
@@ -690,13 +693,13 @@
 
             </div>
         </div>
-        <div class="container text-center copyright">
+        <div class="container text-center copyright text-white">
             <hr>
             &copy; <a href="http://www.justiceotuya.com">Justice</a> , <a href="https://www.behance.net/Pappygold3d3a8">Adelanke</a>,
             <a href="https://www.behance.net/ikdaniel15d8c1">Ikechukwu</a>,<a href="http://#">Adedayo</a>
         </div>
 
-        <section id="go-to-top" class=" bg-custom fixed-bottom text-right">
+        <section id="go-to-top" class="fixed-bottom text-right">
             <!-- <div class="nav navbar-nav"> -->
             <a href="#nav-top-page">
                 <img src="./image/top.svg" alt="go to top icon" id="go-to-top-icon">

@@ -25,7 +25,7 @@ main {
 }
 
 .bg-custom {
-  background-color: white !important;
+  background-color: black !important;
   transition: 500ms ease;
 }
 .bg-custom-fixed {
@@ -37,6 +37,8 @@ main {
 #nav-top-page {
   background-image: url('../image/cover-grad.png');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 20%;
   margin-top: 0;
 }
 #introduction {
@@ -86,6 +88,10 @@ main {
 
 .intro-text {
   font-size: 20px;
+  z-index: 1;
+  /* padding-top: 20vw; */
+  position: absolute;
+  top: 30vh;
 }
 button {
   border-radius: 0 !important;
@@ -130,37 +136,62 @@ li {
 .second-nav-icon {
   display: none;
 }
+
+.second-nav ul {
+  /* position: absolute; */
+  /* top: 90%; */
+}
+
 .second-nav li {
-  padding: 0 20px;
-  position: relative;
-  top: 10vw;
+  padding: 0 40px;
 }
 
 .second-nav-icon li {
-  padding: 0 20px;
-  position: relative;
-  top: 10vw;
+  /* padding: 0 20px; */
+  /* position: relative; */
+  /* top: 10vw; */
   right: -2vw;
 }
 
-#employment-icon {
-  position: relative;
-  left: 20px;
-}
-
-#welfare-icon {
-  position: relative;
-  left: 25px;
-}
-
-#salary-icon {
+#introduction-icon {
   position: relative;
   left: 10px;
 }
 
+#employment-icon {
+  position: relative;
+  left: 40px;
+}
+
+#welfare-icon {
+  position: relative;
+  left: 30px;
+}
+
+#salary-icon {
+  position: relative;
+  left: 50px;
+}
+
+#education-icon {
+  position: relative;
+  left: 20px;
+}
+
+#others-icon {
+  position: relative;
+  left: 10px;
+}
 .icon-bar {
   position: relative;
   top: 50px;
+}
+
+#nav-down {
+  position: absolute;
+  bottom: 2vh;
+  z-index: 0;
+  z-index: 0;
 }
 
 .subject-card {
@@ -175,7 +206,6 @@ li {
 
 li a {
   color: #fff !important;
-  font-weight: bold;
 }
 
 .copyright a {
@@ -220,9 +250,9 @@ li a {
   color: #000 !important;
   text-decoration: none;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
+  /* padding: 10%; */
 }
 
 button {
@@ -242,7 +272,8 @@ button:hover a {
   width: 20%;
 }
 #nav-top-page {
-  min-height: 100%;
+  height: 100vh;
+  /* width: 100vh; */
   clear: both;
   height: inherit;
 }
@@ -284,7 +315,7 @@ button:hover a {
   padding-bottom: 100px;
 }
 
-#percent {
+.percent {
   font-size: 36px;
   font-weight: 600;
 }
@@ -490,13 +521,16 @@ footer {
   #go-to-top-icon {
     width: 5%;
   }
+
+  .button a {
+    font-size: 24px;
+  }
   li a {
     color: #fff !important;
-    font-weight: bold;
   }
 
   li a:hover {
-    color: #073731 !important;
+    color: #ffc000 !important;
     text-decoration: none;
   }
 }
