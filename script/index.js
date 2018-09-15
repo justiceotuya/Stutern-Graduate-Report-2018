@@ -1,3 +1,5 @@
+$('#go-to-top').css({ display: 'none' });
+
 google.charts.load('upcoming', {
   packages: ['corechart', 'bar'],
   mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
@@ -948,6 +950,7 @@ $('.customer-logos').slick({
 });
 
 //scroll function
+
 $(document).scroll(function() {
   var y = $(this).scrollTop();
   if (y > 500) {
