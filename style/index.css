@@ -44,6 +44,7 @@ main {
 #introduction {
   background-image: url('../image/section-sec-background.png');
   margin-top: 0;
+  background-size: 100%;
   margin-bottom: 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -54,12 +55,14 @@ main {
 
 #employment {
   background-image: url('../image/Rectangle\ 7.png');
+  background-size: 100%;
   background-position: cover;
   background-repeat: no-repeat;
   margin-top: 0;
 }
 
 #salaries {
+  background-size: 100%;
   background-image: url('../image/Rectangle\ 7.png');
   background-position: cover;
   background-repeat: no-repeat;
@@ -70,18 +73,21 @@ main {
   background-image: url('../image/Rectangle\ 7.png');
   background-position: cover;
   background-repeat: no-repeat;
+  background-size: 100%;
   margin-top: 0;
 }
 
 #education {
   background-image: url('../image/Rectangle\ 7.png');
   background-position: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   margin-top: 0;
 }
 #others {
   background-image: url('../image/Rectangle\ 7.png');
   background-position: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   margin-top: 0;
 }
